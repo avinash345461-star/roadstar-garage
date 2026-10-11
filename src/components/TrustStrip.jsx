@@ -49,21 +49,21 @@ export default function TrustStrip() {
           {metrics.map((item, idx) => (
             <div
               key={idx}
-              className="snap-start shrink-0 min-w-[135px] sm:min-w-0 flex-1 border-l border-amber-400/30 pl-3 sm:pl-4 flex flex-col justify-between"
+              className="snap-start shrink-0 min-w-[155px] sm:min-w-0 flex-1 border-l-2 border-amber-400/40 pl-3.5 sm:pl-4 flex flex-col justify-between"
             >
               {/* Yellow Figure Heading */}
-              <div className="text-lg sm:text-2xl lg:text-3xl font-extrabold font-heading tracking-tight text-amber-400 mb-0.5">
+              <div className="text-xl sm:text-2xl lg:text-3xl font-black font-heading tracking-tight text-amber-400 mb-1">
                 {item.figure}
               </div>
 
               <div>
                 {/* Yellow Title Heading */}
-                <div className="text-[10px] sm:text-xs font-mono font-bold uppercase tracking-wider text-amber-300/90 leading-tight">
+                <div className="text-[11px] sm:text-xs font-mono font-bold uppercase tracking-wider text-amber-300 leading-tight">
                   {item.title}
                 </div>
 
                 {/* White Context */}
-                <div className="text-[10px] sm:text-xs text-white/90 mt-0.5 sm:mt-1 font-medium leading-snug">
+                <div className="text-xs text-white/95 mt-1 font-medium leading-snug">
                   {item.desc}
                 </div>
               </div>

@@ -58,22 +58,22 @@ export default function CustomerReviews() {
                 AUTHENTIC GOOGLE REVIEWS // 4.9 RATING
               </span>
             </div>
-            <h2 className="text-2xl sm:text-4xl lg:text-6xl font-extrabold tracking-tight text-white font-heading">
+            <h2 className="text-3xl sm:text-4xl lg:text-6xl font-extrabold tracking-tight text-white font-heading">
               WHAT VEHICLE OWNERS SAY.
             </h2>
           </div>
 
-          <div className="glass-panel rounded-2xl sm:rounded-3xl px-4 sm:px-8 py-3.5 sm:py-5 flex items-center gap-3 sm:gap-6 w-full sm:w-auto justify-start">
-            <div className="text-3xl sm:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-amber-300 to-amber-500 font-heading shrink-0">
+          <div className="glass-panel rounded-2xl sm:rounded-3xl px-5 sm:px-8 py-4 sm:py-5 flex items-center gap-3.5 sm:gap-6 w-full sm:w-auto justify-start">
+            <div className="text-4xl sm:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-amber-300 to-amber-500 font-heading shrink-0">
               4.9
             </div>
-            <div className="border-l border-white/10 pl-3 sm:pl-6">
-              <div className="flex text-amber-400 mb-0.5 sm:mb-1">
+            <div className="border-l border-white/10 pl-3.5 sm:pl-6">
+              <div className="flex text-amber-400 mb-1">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-amber-400" />
+                  <Star key={i} className="w-4 h-4 fill-amber-400" />
                 ))}
               </div>
-              <span className="text-[10px] sm:text-xs font-mono text-neutral-400 uppercase block font-medium">
+              <span className="text-[11px] sm:text-xs font-mono text-neutral-300 sm:text-neutral-400 uppercase block font-medium">
                 173+ Verified Client Ratings
               </span>
             </div>
@@ -81,7 +81,7 @@ export default function CustomerReviews() {
         </motion.div>
 
         {/* Real Customer Quotes Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-7">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-7">
           {reviews.map((rev, idx) => (
             <motion.div
               key={idx}
@@ -90,28 +90,28 @@ export default function CustomerReviews() {
               viewport={{ once: true, margin: '-40px' }}
               transition={{ duration: 0.6, delay: (idx % 3) * 0.1, ease: [0.16, 1, 0.3, 1] }}
               whileHover={{ y: -6 }}
-              className={`glass-panel-hover rounded-2xl sm:rounded-3xl p-5 sm:p-8 flex flex-col justify-between group ${
+              className={`glass-panel-hover rounded-2xl sm:rounded-3xl p-6 sm:p-8 flex flex-col justify-between group ${
                 idx === 4 ? 'md:col-span-2 lg:col-span-2' : ''
               }`}
             >
               <div>
-                <div className="flex items-center justify-between mb-3.5 sm:mb-6 pb-2.5 sm:pb-4 border-b border-white/[0.06]">
-                  <span className="text-[10px] sm:text-[11px] font-mono uppercase tracking-wider text-amber-300 bg-amber-400/10 px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-lg border border-amber-400/20">
+                <div className="flex items-center justify-between mb-4 sm:mb-6 pb-3 sm:pb-4 border-b border-white/[0.06]">
+                  <span className="text-[11px] font-mono uppercase tracking-wider text-amber-300 bg-amber-400/10 px-3 py-1 rounded-lg border border-amber-400/20">
                     {rev.tag}
                   </span>
                   <div className="flex text-amber-400">
                     {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-3 h-3 sm:w-3.5 sm:h-3.5 fill-amber-400" />
+                      <Star key={i} className="w-3.5 h-3.5 fill-amber-400" />
                     ))}
                   </div>
                 </div>
 
-                <blockquote className="text-xs sm:text-base lg:text-lg font-medium text-neutral-200 leading-relaxed mb-4 sm:mb-8">
+                <blockquote className="text-sm sm:text-base lg:text-lg font-medium text-neutral-100 sm:text-neutral-200 leading-relaxed mb-5 sm:mb-8">
                   "{rev.quote}"
                 </blockquote>
               </div>
 
-              <div className="pt-3 sm:pt-5 border-t border-white/[0.06] flex items-center justify-between text-[11px] sm:text-xs font-mono text-neutral-400">
+              <div className="pt-4 sm:pt-5 border-t border-white/[0.06] flex items-center justify-between text-xs font-mono text-neutral-400">
                 <span className="text-white uppercase font-semibold">{rev.author}</span>
                 <span>{rev.location}</span>
               </div>

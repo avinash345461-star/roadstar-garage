@@ -106,17 +106,17 @@ export default function Services({ onSelectService }) {
                 CATALOG // VEHICLE CARE & DETAILING
               </span>
             </div>
-            <h2 className="text-2xl sm:text-4xl lg:text-6xl font-extrabold tracking-tight text-white font-heading">
+            <h2 className="text-3xl sm:text-4xl lg:text-6xl font-extrabold tracking-tight text-white font-heading">
               SERVICES & SPECIFICATIONS.
             </h2>
           </div>
-          <p className="text-xs sm:text-base text-neutral-400 max-w-lg font-normal leading-relaxed">
+          <p className="text-sm sm:text-base text-neutral-300 sm:text-neutral-400 max-w-lg font-normal leading-relaxed">
             Every service at Roadstar's Garage is carried out using dedicated automotive formulations and trained technicians. Select a package to schedule in our Varanasi bays.
           </p>
         </motion.div>
 
         {/* Technical Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {services.map((srv, idx) => (
             <motion.div
               key={srv.id}
@@ -137,26 +137,26 @@ export default function Services({ onSelectService }) {
                 />
                 
                 {/* Category Badge */}
-                <div className="absolute top-2.5 right-2.5 sm:top-3.5 sm:right-3.5 px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-md sm:rounded-lg bg-black/80 border border-white/10 backdrop-blur-md text-[9px] sm:text-[10px] font-mono uppercase tracking-widest text-neutral-300">
+                <div className="absolute top-3 right-3 sm:top-3.5 sm:right-3.5 px-2.5 py-1 sm:px-3 sm:py-1 rounded-md sm:rounded-lg bg-black/80 border border-white/10 backdrop-blur-md text-[10px] sm:text-[10px] font-mono uppercase tracking-widest text-neutral-200">
                   {srv.category}
                 </div>
               </div>
 
               {/* Card Body */}
-              <div className="p-4 sm:p-7 flex flex-col flex-grow justify-between">
+              <div className="p-5 sm:p-7 flex flex-col flex-grow justify-between">
                 <div>
-                  <h3 className="text-base sm:text-xl font-bold font-heading tracking-tight text-white mb-2 sm:mb-3 group-hover:text-amber-300 transition-colors leading-snug">
+                  <h3 className="text-lg sm:text-xl font-bold font-heading tracking-tight text-white mb-2 sm:mb-3 group-hover:text-amber-300 transition-colors leading-snug">
                     {srv.title}
                   </h3>
                   
-                  <p className="text-xs sm:text-sm text-neutral-400 leading-relaxed mb-4 sm:mb-6 font-normal">
+                  <p className="text-xs sm:text-sm text-neutral-300 sm:text-neutral-400 leading-relaxed mb-4 sm:mb-6 font-normal">
                     {srv.description}
                   </p>
 
                   {/* Specification list */}
-                  <div className="space-y-1.5 sm:space-y-2.5 mb-4 sm:mb-7 border-t border-white/[0.06] pt-3.5 sm:pt-5">
+                  <div className="space-y-2 sm:space-y-2.5 mb-5 sm:mb-7 border-t border-white/[0.06] pt-4 sm:pt-5">
                     {srv.specs.map((spec, i) => (
-                      <div key={i} className="flex items-center gap-2 text-[11px] sm:text-xs font-mono text-neutral-300">
+                      <div key={i} className="flex items-center gap-2.5 text-xs font-mono text-neutral-200 sm:text-neutral-300">
                         <span className="w-1.5 h-1.5 rounded-full bg-amber-400 shrink-0"></span>
                         <span className="truncate">{spec}</span>
                       </div>
@@ -165,16 +165,16 @@ export default function Services({ onSelectService }) {
                 </div>
 
                 {/* Footer Action */}
-                <div className="pt-3.5 sm:pt-5 border-t border-white/[0.06] flex items-center justify-between">
-                  <span className="text-[10px] sm:text-[11px] font-mono text-neutral-500 uppercase">
+                <div className="pt-4 sm:pt-5 border-t border-white/[0.06] flex items-center justify-between">
+                  <span className="text-[11px] font-mono text-neutral-400 sm:text-neutral-500 uppercase">
                     VARANASI BAY
                   </span>
                   <button
                     onClick={() => onSelectService(srv.title)}
-                    className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-neutral-200 group-hover:text-amber-400 transition-colors cursor-pointer"
+                    className="flex items-center gap-1.5 text-xs sm:text-sm font-bold uppercase tracking-wider text-neutral-100 group-hover:text-amber-400 transition-colors cursor-pointer"
                   >
                     <span>SCHEDULE THIS</span>
-                    <ArrowUpRight className="w-3.5 h-3.5 text-amber-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                    <ArrowUpRight className="w-4 h-4 text-amber-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                   </button>
                 </div>
               </div>

@@ -45,7 +45,7 @@ export default function Hero({ onOpenBooking }) {
             </div>
 
             {/* Factual Subtitle */}
-            <p className="text-xs sm:text-base lg:text-lg text-neutral-400 max-w-xl font-normal leading-relaxed mb-6 sm:mb-10">
+            <p className="text-sm sm:text-base lg:text-lg text-neutral-300 sm:text-neutral-400 max-w-xl font-normal leading-relaxed mb-6 sm:mb-10">
               Professional car washing, high-precision foam treatments, interior sanitization, and 9H ceramic coating in Varanasi. Built on genuine craftsmanship, paint-safe formulations, and attention to every millimeter.
             </p>
 
@@ -55,10 +55,10 @@ export default function Hero({ onOpenBooking }) {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={onOpenBooking}
-                className="btn-luxury-primary flex-1 sm:flex-initial px-4 py-3 sm:px-8 sm:py-4 text-xs font-bold flex items-center justify-center gap-1.5 sm:gap-2 cursor-pointer shadow-lg shadow-amber-500/10"
+                className="btn-luxury-primary flex-1 sm:flex-initial px-5 py-3.5 sm:px-8 sm:py-4 text-xs sm:text-sm font-bold flex items-center justify-center gap-1.5 sm:gap-2 cursor-pointer shadow-lg shadow-amber-500/10"
               >
                 <span>BOOK BAY</span>
-                <ArrowUpRight className="w-3.5 h-3.5" />
+                <ArrowUpRight className="w-4 h-4" />
               </motion.button>
 
               <motion.a
@@ -67,39 +67,39 @@ export default function Hero({ onOpenBooking }) {
                 href={googleMapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-luxury-glass flex-1 sm:flex-initial px-4 py-3 sm:px-7 sm:py-4 text-xs font-mono flex items-center justify-center gap-1.5 sm:gap-2.5"
+                className="btn-luxury-glass flex-1 sm:flex-initial px-5 py-3.5 sm:px-7 sm:py-4 text-xs sm:text-sm font-mono flex items-center justify-center gap-1.5 sm:gap-2.5"
               >
-                <MapPin className="w-3.5 h-3.5 text-amber-400" />
+                <MapPin className="w-4 h-4 text-amber-400" />
                 <span>DIRECTIONS</span>
               </motion.a>
             </div>
 
             {/* Structured Proof Meta Glass Container */}
-            <div className="pt-5 sm:pt-8 border-t border-white/[0.08] grid grid-cols-2 gap-2.5 sm:gap-4">
-              <div className="p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-neutral-900/60 border border-white/[0.08] backdrop-blur-md flex items-center gap-2.5 sm:gap-3.5">
-                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-amber-400/10 border border-amber-400/20 flex items-center justify-center shrink-0">
+            <div className="pt-5 sm:pt-8 border-t border-white/[0.08] grid grid-cols-2 gap-3 sm:gap-4">
+              <div className="p-3.5 sm:p-4 rounded-xl sm:rounded-2xl bg-neutral-900/60 border border-white/[0.08] backdrop-blur-md flex items-center gap-3 sm:gap-3.5">
+                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-amber-400/10 border border-amber-400/20 flex items-center justify-center shrink-0">
                   <Star className="w-4 h-4 sm:w-5 sm:h-5 fill-amber-400 text-amber-400" />
                 </div>
                 <div>
-                  <div className="flex items-center gap-1">
-                    <span className="font-heading font-bold text-sm sm:text-base text-white">4.9 / 5.0</span>
-                    <span className="text-[9px] sm:text-[10px] font-mono px-1 sm:px-1.5 py-0.5 rounded bg-amber-400/10 text-amber-400 font-semibold hidden xs:inline">173+</span>
+                  <div className="flex items-center gap-1.5">
+                    <span className="font-heading font-bold text-base sm:text-lg text-white">4.9</span>
+                    <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-amber-400/10 text-amber-400 font-semibold hidden xs:inline">173+</span>
                   </div>
-                  <span className="text-[10px] sm:text-xs text-neutral-400 block mt-0.5">
-                    Verified Google Rating
+                  <span className="text-xs text-neutral-400 block mt-0.5 leading-tight">
+                    Verified Rating
                   </span>
                 </div>
               </div>
 
-              <div className="p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-neutral-900/60 border border-white/[0.08] backdrop-blur-md flex items-center gap-2.5 sm:gap-3.5">
-                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-neutral-800/90 border border-white/10 flex items-center justify-center shrink-0">
+              <div className="p-3.5 sm:p-4 rounded-xl sm:rounded-2xl bg-neutral-900/60 border border-white/[0.08] backdrop-blur-md flex items-center gap-3 sm:gap-3.5">
+                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-neutral-800/90 border border-white/10 flex items-center justify-center shrink-0">
                   <ShieldCheck className="w-4 h-4 sm:w-5 sm:h-5 text-amber-400" />
                 </div>
                 <div>
-                  <span className="text-xs sm:text-sm font-bold text-white block">
+                  <span className="text-sm font-bold text-white block leading-tight">
                     Certified Bay
                   </span>
-                  <span className="text-[10px] sm:text-xs text-neutral-400 block mt-0.5 truncate">
+                  <span className="text-xs text-neutral-400 block mt-0.5 truncate">
                     Konia, Varanasi
                   </span>
                 </div>
