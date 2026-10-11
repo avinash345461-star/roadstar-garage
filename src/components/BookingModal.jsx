@@ -62,17 +62,17 @@ export default function BookingModal({ isOpen, onClose, selectedService = '' }) 
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
             transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-            className="relative max-w-lg w-full bg-neutral-900/95 border border-white/10 rounded-2xl sm:rounded-3xl p-5 sm:p-8 max-h-[85dvh] overflow-y-auto shadow-2xl my-auto backdrop-blur-2xl z-10"
+            className="relative max-w-lg w-full bg-neutral-900/95 border border-white/10 rounded-2xl sm:rounded-3xl p-4 sm:p-8 max-h-[90dvh] overflow-y-auto shadow-2xl my-auto backdrop-blur-2xl z-10"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Header */}
-            <div className="flex items-center justify-between border-b border-white/[0.08] pb-5 mb-6">
+            <div className="flex items-center justify-between border-b border-white/[0.08] pb-4 sm:pb-5 mb-5 sm:mb-6">
               <div>
-                <div className="inline-flex items-center gap-1.5 text-xs font-mono uppercase text-amber-400 font-medium mb-1">
-                  <Sparkles className="w-3.5 h-3.5" />
+                <div className="inline-flex items-center gap-1.5 text-[10px] sm:text-xs font-mono uppercase text-amber-400 font-medium mb-1">
+                  <Sparkles className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
                   <span>ROADSTAR'S GARAGE // APPOINTMENT</span>
                 </div>
-                <h3 className="text-xl sm:text-2xl font-extrabold font-heading tracking-tight text-white">
+                <h3 className="text-lg sm:text-2xl font-extrabold font-heading tracking-tight text-white">
                   SCHEDULE VEHICLE BAY
                 </h3>
               </div>

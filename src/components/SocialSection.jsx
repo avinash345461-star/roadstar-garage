@@ -150,7 +150,7 @@ export default function SocialSection() {
           <div className="absolute right-0 top-0 bottom-0 w-12 sm:w-20 bg-gradient-to-l from-black via-black/80 to-transparent z-10 pointer-events-none"></div>
 
           <motion.div
-            className="flex gap-5 sm:gap-7 w-max"
+            className="flex gap-3 sm:gap-7 w-max"
             animate={{ x: ['0%', '-50%'] }}
             transition={{
               repeat: Infinity,
@@ -167,24 +167,24 @@ export default function SocialSection() {
                 href={chan.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="glass-panel-hover rounded-2xl sm:rounded-3xl p-5 sm:p-7 flex flex-col justify-between group w-[280px] sm:w-[320px] shrink-0"
+                className="glass-panel-hover rounded-2xl sm:rounded-3xl p-4 sm:p-7 flex flex-col justify-between group w-[260px] sm:w-[320px] shrink-0"
               >
                 <div>
-                  <div className="flex items-center justify-between mb-4 sm:mb-6 pb-3 sm:pb-4 border-b border-white/[0.06]">
-                    <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-neutral-900 border border-white/10 flex items-center justify-center text-neutral-300 group-hover:text-amber-400 group-hover:border-amber-400/30 transition-colors">
+                  <div className="flex items-center justify-between mb-3 sm:mb-6 pb-2.5 sm:pb-4 border-b border-white/[0.06]">
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-neutral-900 border border-white/10 flex items-center justify-center text-neutral-300 group-hover:text-amber-400 group-hover:border-amber-400/30 transition-colors">
                       {chan.icon}
                     </div>
-                    <span className="text-[10px] font-mono uppercase tracking-wider text-neutral-400 bg-neutral-900 px-2.5 py-1 rounded-lg border border-white/[0.06]">
+                    <span className="text-[9px] sm:text-[10px] font-mono uppercase tracking-wider text-neutral-400 bg-neutral-900 px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-lg border border-white/[0.06]">
                       {chan.tag}
                     </span>
                   </div>
 
-                  <h3 className="text-base sm:text-lg font-bold font-heading tracking-tight text-white mb-1 group-hover:text-amber-300 transition-colors flex items-center justify-between">
+                  <h3 className="text-sm sm:text-lg font-bold font-heading tracking-tight text-white mb-1 group-hover:text-amber-300 transition-colors flex items-center justify-between">
                     <span>{chan.name}</span>
-                    <ArrowUpRight className="w-4 h-4 text-neutral-500 group-hover:text-amber-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+                    <ArrowUpRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-neutral-500 group-hover:text-amber-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
                   </h3>
 
-                  <span className="text-xs font-mono text-amber-400 block mb-2 sm:mb-3 font-semibold">
+                  <span className="text-xs font-mono text-amber-400 block mb-1.5 sm:mb-3 font-semibold">
                     {chan.handle}
                   </span>
 
@@ -193,7 +193,7 @@ export default function SocialSection() {
                   </p>
                 </div>
 
-                <div className="pt-4 sm:pt-5 border-t border-white/[0.06] mt-4 sm:mt-5 text-xs font-mono text-neutral-400 group-hover:text-neutral-200 flex items-center justify-between">
+                <div className="pt-3.5 sm:pt-5 border-t border-white/[0.06] mt-3.5 sm:mt-5 text-xs font-mono text-neutral-400 group-hover:text-neutral-200 flex items-center justify-between">
                   <span>CONNECT</span>
                   <span>→</span>
                 </div>

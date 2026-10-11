@@ -64,7 +64,7 @@ export default function WhyRoadstar() {
           <div className="absolute right-0 top-0 bottom-0 w-10 sm:w-20 bg-gradient-to-l from-black via-black/80 to-transparent z-10 pointer-events-none"></div>
 
           <motion.div
-            className="flex gap-4 sm:gap-7 w-max"
+            className="flex gap-3 sm:gap-7 w-max"
             animate={{ x: ['0%', '-50%'] }}
             transition={{
               repeat: Infinity,
@@ -80,11 +80,11 @@ export default function WhyRoadstar() {
               return (
                 <div
                   key={`${pillar.number}-${idx}`}
-                  className="glass-panel-hover rounded-2xl sm:rounded-3xl p-5 sm:p-7 flex flex-col justify-between group w-[280px] sm:w-[320px] shrink-0"
+                  className="glass-panel-hover rounded-2xl sm:rounded-3xl p-4 sm:p-7 flex flex-col justify-between group w-[260px] sm:w-[320px] shrink-0"
                 >
                   <div>
-                    <div className="flex items-center justify-between mb-4 sm:mb-6">
-                      <div className="text-2xl sm:text-3xl font-mono font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-300 to-amber-500">
+                    <div className="flex items-center justify-between mb-3 sm:mb-6">
+                      <div className="text-xl sm:text-3xl font-mono font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-300 to-amber-500">
                         {pillar.number}
                       </div>
                       <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-neutral-900 border border-white/10 flex items-center justify-center text-amber-400 group-hover:border-amber-400/40 group-hover:scale-110 transition-all">
@@ -92,7 +92,7 @@ export default function WhyRoadstar() {
                       </div>
                     </div>
 
-                    <h3 className="text-base sm:text-lg font-bold font-heading tracking-tight text-white mb-2 sm:mb-3 group-hover:text-amber-300 transition-colors">
+                    <h3 className="text-sm sm:text-lg font-bold font-heading tracking-tight text-white mb-1.5 sm:mb-3 group-hover:text-amber-300 transition-colors">
                       {pillar.title}
                     </h3>
 
@@ -101,7 +101,7 @@ export default function WhyRoadstar() {
                     </p>
                   </div>
 
-                  <div className="w-6 sm:w-8 h-[2px] bg-white/10 group-hover:bg-amber-400 group-hover:w-12 sm:group-hover:w-16 transition-all duration-300 mt-5 sm:mt-6 rounded-full"></div>
+                  <div className="w-6 sm:w-8 h-[2px] bg-white/10 group-hover:bg-amber-400 group-hover:w-12 sm:group-hover:w-16 transition-all duration-300 mt-4 sm:mt-6 rounded-full"></div>
                 </div>
               );
             })}

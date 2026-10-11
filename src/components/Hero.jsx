@@ -36,7 +36,7 @@ export default function Hero({ onOpenBooking }) {
 
             {/* Dominant Headline */}
             <div className="mb-4 sm:mb-6">
-              <h1 className="text-3xl sm:text-6xl lg:text-7xl xl:text-8xl font-black tracking-tight uppercase text-white font-heading leading-[1.05] sm:leading-[0.98] drop-shadow-[0_10px_25px_rgba(0,0,0,0.8)]">
+              <h1 className="text-3xl sm:text-6xl lg:text-7xl xl:text-8xl font-black tracking-tight uppercase text-white font-heading leading-[1.08] sm:leading-[0.98] drop-shadow-[0_10px_25px_rgba(0,0,0,0.8)] break-words">
                 BUILT FOR THE ROAD.{' '}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-amber-400 to-amber-500 block mt-1 sm:mt-2 font-black filter drop-shadow-[0_0_35px_rgba(245,196,0,0.35)]">
                   PERFECTED IN THE BAY.
@@ -45,20 +45,20 @@ export default function Hero({ onOpenBooking }) {
             </div>
 
             {/* Factual Subtitle */}
-            <p className="text-sm sm:text-base lg:text-lg text-neutral-300 sm:text-neutral-400 max-w-xl font-normal leading-relaxed mb-6 sm:mb-10">
+            <p className="text-xs sm:text-base lg:text-lg text-neutral-300 sm:text-neutral-400 max-w-xl font-normal leading-relaxed mb-6 sm:mb-10">
               Professional car washing, high-precision foam treatments, interior sanitization, and 9H ceramic coating in Varanasi. Built on genuine craftsmanship, paint-safe formulations, and attention to every millimeter.
             </p>
 
             {/* Action Bar */}
-            <div className="flex flex-row items-center gap-3 sm:gap-4 mb-8 sm:mb-12">
+            <div className="flex flex-row items-center gap-2.5 sm:gap-4 mb-8 sm:mb-12">
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={onOpenBooking}
-                className="btn-luxury-primary flex-1 sm:flex-initial px-5 py-3.5 sm:px-8 sm:py-4 text-xs sm:text-sm font-bold flex items-center justify-center gap-1.5 sm:gap-2 cursor-pointer shadow-lg shadow-amber-500/10"
+                className="btn-luxury-primary flex-1 sm:flex-initial min-h-[44px] px-4 py-3 sm:px-8 sm:py-4 text-xs sm:text-sm font-bold flex items-center justify-center gap-1.5 sm:gap-2 cursor-pointer shadow-lg shadow-amber-500/10 text-center"
               >
                 <span>BOOK BAY</span>
-                <ArrowUpRight className="w-4 h-4" />
+                <ArrowUpRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
               </motion.button>
 
               <motion.a
@@ -67,9 +67,9 @@ export default function Hero({ onOpenBooking }) {
                 href={googleMapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-luxury-glass flex-1 sm:flex-initial px-5 py-3.5 sm:px-7 sm:py-4 text-xs sm:text-sm font-mono flex items-center justify-center gap-1.5 sm:gap-2.5"
+                className="btn-luxury-glass flex-1 sm:flex-initial min-h-[44px] px-4 py-3 sm:px-7 sm:py-4 text-xs sm:text-sm font-mono flex items-center justify-center gap-1.5 sm:gap-2.5 text-center"
               >
-                <MapPin className="w-4 h-4 text-amber-400" />
+                <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-amber-400 shrink-0" />
                 <span>DIRECTIONS</span>
               </motion.a>
             </div>
