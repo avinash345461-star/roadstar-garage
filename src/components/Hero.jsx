@@ -36,9 +36,9 @@ export default function Hero({ onOpenBooking }) {
 
             {/* Dominant Headline */}
             <div className="mb-4 sm:mb-6">
-              <h1 className="text-2xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight text-white font-heading leading-[1.12] sm:leading-[1.05]">
+              <h1 className="text-3xl sm:text-6xl lg:text-7xl xl:text-8xl font-black tracking-tight uppercase text-white font-heading leading-[1.05] sm:leading-[0.98] drop-shadow-[0_10px_25px_rgba(0,0,0,0.8)]">
                 BUILT FOR THE ROAD.{' '}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-amber-400 to-amber-500 block mt-0.5 sm:mt-1">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-amber-400 to-amber-500 block mt-1 sm:mt-2 font-black filter drop-shadow-[0_0_35px_rgba(245,196,0,0.35)]">
                   PERFECTED IN THE BAY.
                 </span>
               </h1>
