@@ -42,17 +42,31 @@ export default function TrustStrip() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: '-40px' }}
         transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-        className="glass-panel rounded-2xl sm:rounded-3xl p-3.5 sm:p-7 backdrop-blur-2xl bg-neutral-900/80 border border-white/[0.08] shadow-2xl"
+        className="glass-panel rounded-2xl sm:rounded-3xl p-3.5 sm:p-6 backdrop-blur-2xl bg-neutral-900/80 border border-white/[0.08] shadow-2xl relative overflow-hidden"
       >
-        {/* Horizontal scroll container on mobile, fits seamlessly without breaking screen */}
-        <div className="flex md:grid md:grid-cols-5 gap-3 sm:gap-6 overflow-x-auto no-scrollbar scroll-smooth snap-x snap-mandatory py-1 -my-1">
-          {metrics.map((item, idx) => (
+        {/* Ambient edge fade gradients */}
+        <div className="absolute left-0 top-0 bottom-0 w-8 sm:w-16 bg-gradient-to-r from-neutral-900 via-neutral-900/80 to-transparent z-10 pointer-events-none"></div>
+        <div className="absolute right-0 top-0 bottom-0 w-8 sm:w-16 bg-gradient-to-l from-neutral-900 via-neutral-900/80 to-transparent z-10 pointer-events-none"></div>
+
+        {/* Always moving horizontal animation container */}
+        <motion.div
+          className="flex gap-4 sm:gap-8 w-max py-1"
+          animate={{ x: ['0%', '-50%'] }}
+          transition={{
+            repeat: Infinity,
+            repeatType: 'loop',
+            duration: 22,
+            ease: 'linear',
+          }}
+        >
+          {/* Duplicated metrics for continuous seamless looping */}
+          {[...metrics, ...metrics].map((item, idx) => (
             <div
               key={idx}
-              className="snap-start shrink-0 min-w-[155px] sm:min-w-0 flex-1 border-l-2 border-amber-400/40 pl-3.5 sm:pl-4 flex flex-col justify-between"
+              className="shrink-0 w-[170px] sm:w-[210px] border-l-2 border-amber-400/40 pl-3.5 sm:pl-4 flex flex-col justify-between"
             >
               {/* Yellow Figure Heading */}
-              <div className="text-xl sm:text-2xl lg:text-3xl font-black font-heading tracking-tight text-amber-400 mb-1">
+              <div className="text-xl sm:text-2xl lg:text-3xl font-black font-heading tracking-tight text-amber-400 mb-0.5 sm:mb-1">
                 {item.figure}
               </div>
 
@@ -63,13 +77,13 @@ export default function TrustStrip() {
                 </div>
 
                 {/* White Context */}
-                <div className="text-xs text-white/95 mt-1 font-medium leading-snug">
+                <div className="text-xs text-white/95 mt-0.5 sm:mt-1 font-medium leading-snug">
                   {item.desc}
                 </div>
               </div>
             </div>
           ))}
-        </div>
+        </motion.div>
       </motion.div>
     </section>
   );
