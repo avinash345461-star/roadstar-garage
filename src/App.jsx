@@ -12,8 +12,6 @@ import LocationSection from './components/LocationSection';
 import ContactCTA from './components/ContactCTA';
 import Footer from './components/Footer';
 import BookingModal from './components/BookingModal';
-import MobileBottomBar from './components/MobileBottomBar';
-
 export default function App() {
   const [isBookingOpen, setIsBookingOpen] = useState(false);
   const [selectedService, setSelectedService] = useState('');
@@ -29,7 +27,7 @@ export default function App() {
   };
 
   return (
-    <div className="bg-black text-neutral-100 min-h-screen font-sans selection:bg-amber-400/20 selection:text-amber-300 pb-16 md:pb-0 relative overflow-x-hidden">
+    <div className="bg-black text-neutral-100 min-h-screen font-sans selection:bg-amber-400/20 selection:text-amber-300 relative overflow-x-hidden">
       {/* Ambient background subtle lighting */}
       <div className="fixed inset-0 bg-ambient-glow pointer-events-none z-0"></div>
 
@@ -70,9 +68,6 @@ export default function App() {
 
       {/* Footer */}
       <Footer />
-
-      {/* Mobile Actions Dock */}
-      <MobileBottomBar onOpenBooking={() => handleOpenBooking()} />
 
       {/* Booking Scheduling Modal */}
       <BookingModal

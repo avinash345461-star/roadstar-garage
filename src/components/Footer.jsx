@@ -29,15 +29,15 @@ export default function Footer() {
     'https://www.google.com/maps/place/Roadstar%E2%80%99s+Garage/@25.3544559,83.0113916,17z/data=!4m6!3m5!1s0x398e2ff189e879c1:0x84dc4f29b4a3c33d!8m2!3d25.3544559!4d83.0113916!16s%2Fg%2F11pyzdp0s_';
 
   return (
-    <footer className="bg-black border-t border-white/[0.08] pt-20 pb-14">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8">
+    <footer className="bg-black border-t border-white/[0.08] pt-12 sm:pt-20 pb-10 sm:pb-14">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8">
         
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 pb-14 border-b border-white/[0.08]">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 sm:gap-12 pb-10 sm:pb-14 border-b border-white/[0.08]">
           
           {/* Brand Identity & Physical Studio Data */}
           <div className="md:col-span-6">
-            <div className="flex items-center gap-3.5 mb-5">
-              <div className="w-11 h-11 rounded-xl bg-neutral-900 border border-white/10 p-1 shrink-0 overflow-hidden flex items-center justify-center shadow-inner">
+            <div className="flex items-center gap-3 sm:gap-3.5 mb-4 sm:mb-5">
+              <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-xl bg-neutral-900 border border-white/10 p-1 shrink-0 overflow-hidden flex items-center justify-center shadow-inner">
                 <img
                   src="/roadstars-logo.png"
                   alt="Roadstar's Garage Logo"
@@ -45,16 +45,16 @@ export default function Footer() {
                 />
               </div>
               <div className="flex flex-col">
-                <span className="text-xl font-bold tracking-tight uppercase font-heading text-white">
+                <span className="text-base sm:text-xl font-bold tracking-tight uppercase font-heading text-white">
                   ROADSTAR'S GARAGE
                 </span>
-                <span className="text-xs font-mono text-neutral-400">
+                <span className="text-[10px] sm:text-xs font-mono text-neutral-400">
                   रोडस्टार्स गेराज // VARANASI STUDIO
                 </span>
               </div>
             </div>
 
-            <p className="text-xs sm:text-sm text-neutral-400 max-w-md mb-8 leading-relaxed font-normal">
+            <p className="text-xs sm:text-sm text-neutral-400 max-w-md mb-6 sm:mb-8 leading-relaxed font-normal">
               Professional Vehicle Care, Foam Washing, 9H Ceramic Coatings & Deep Cabin Detailing in Varanasi, Uttar Pradesh.
             </p>
 

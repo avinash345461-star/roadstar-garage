@@ -88,8 +88,8 @@ export default function Services({ onSelectService }) {
   ];
 
   return (
-    <section id="services" className="relative py-28 md:py-36 bg-black border-b border-white/[0.06]">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 relative z-10">
+    <section id="services" className="relative py-14 sm:py-24 md:py-36 bg-black border-b border-white/[0.06]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 relative z-10">
         
         {/* Section Header */}
         <motion.div
@@ -97,26 +97,26 @@ export default function Services({ onSelectService }) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-          className="flex flex-col lg:flex-row lg:items-end justify-between mb-20 gap-8"
+          className="flex flex-col lg:flex-row lg:items-end justify-between mb-8 sm:mb-20 gap-4 sm:gap-8"
         >
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-400/[0.08] border border-amber-400/20 mb-4">
-              <Sparkles className="w-3.5 h-3.5 text-amber-400" />
-              <span className="text-[11px] font-mono uppercase tracking-widest text-amber-300 font-medium">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-400/[0.08] border border-amber-400/20 mb-3 sm:mb-4">
+              <Sparkles className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-amber-400" />
+              <span className="text-[10px] sm:text-[11px] font-mono uppercase tracking-widest text-amber-300 font-medium">
                 CATALOG // VEHICLE CARE & DETAILING
               </span>
             </div>
-            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white font-heading">
+            <h2 className="text-2xl sm:text-4xl lg:text-6xl font-extrabold tracking-tight text-white font-heading">
               SERVICES & SPECIFICATIONS.
             </h2>
           </div>
-          <p className="text-sm sm:text-base text-neutral-400 max-w-lg font-normal leading-relaxed">
+          <p className="text-xs sm:text-base text-neutral-400 max-w-lg font-normal leading-relaxed">
             Every service at Roadstar's Garage is carried out using dedicated automotive formulations and trained technicians. Select a package to schedule in our Varanasi bays.
           </p>
         </motion.div>
 
         {/* Technical Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-8">
           {services.map((srv, idx) => (
             <motion.div
               key={srv.id}
@@ -125,10 +125,10 @@ export default function Services({ onSelectService }) {
               viewport={{ once: true, margin: '-40px' }}
               transition={{ duration: 0.6, delay: (idx % 3) * 0.1, ease: [0.16, 1, 0.3, 1] }}
               whileHover={{ y: -6 }}
-              className="glass-panel-hover rounded-3xl overflow-hidden flex flex-col justify-between group"
+              className="glass-panel-hover rounded-2xl sm:rounded-3xl overflow-hidden flex flex-col justify-between group"
             >
               {/* Image Container with Luxury Frost Badge */}
-              <div className="relative aspect-[16/10] overflow-hidden bg-neutral-900">
+              <div className="relative aspect-[16/9] sm:aspect-[16/10] overflow-hidden bg-neutral-900">
                 <img
                   src={srv.image}
                   alt={srv.title}
@@ -137,41 +137,41 @@ export default function Services({ onSelectService }) {
                 />
                 
                 {/* Number Badge */}
-                <div className="absolute top-3.5 left-3.5 px-3 py-1 rounded-lg bg-black/80 border border-white/10 backdrop-blur-md text-xs font-mono font-bold text-amber-400">
+                <div className="absolute top-2.5 left-2.5 sm:top-3.5 sm:left-3.5 px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-md sm:rounded-lg bg-black/80 border border-white/10 backdrop-blur-md text-[11px] sm:text-xs font-mono font-bold text-amber-400">
                   #{srv.number}
                 </div>
 
                 {/* Category Badge */}
-                <div className="absolute top-3.5 right-3.5 px-3 py-1 rounded-lg bg-black/80 border border-white/10 backdrop-blur-md text-[10px] font-mono uppercase tracking-widest text-neutral-300">
+                <div className="absolute top-2.5 right-2.5 sm:top-3.5 sm:right-3.5 px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-md sm:rounded-lg bg-black/80 border border-white/10 backdrop-blur-md text-[9px] sm:text-[10px] font-mono uppercase tracking-widest text-neutral-300">
                   {srv.category}
                 </div>
               </div>
 
               {/* Card Body */}
-              <div className="p-7 flex flex-col flex-grow justify-between">
+              <div className="p-4 sm:p-7 flex flex-col flex-grow justify-between">
                 <div>
-                  <h3 className="text-lg sm:text-xl font-bold font-heading tracking-tight text-white mb-3 group-hover:text-amber-300 transition-colors leading-snug">
+                  <h3 className="text-base sm:text-xl font-bold font-heading tracking-tight text-white mb-2 sm:mb-3 group-hover:text-amber-300 transition-colors leading-snug">
                     {srv.title}
                   </h3>
                   
-                  <p className="text-xs sm:text-sm text-neutral-400 leading-relaxed mb-6 font-normal">
+                  <p className="text-xs sm:text-sm text-neutral-400 leading-relaxed mb-4 sm:mb-6 font-normal">
                     {srv.description}
                   </p>
 
                   {/* Specification list */}
-                  <div className="space-y-2.5 mb-7 border-t border-white/[0.06] pt-5">
+                  <div className="space-y-1.5 sm:space-y-2.5 mb-4 sm:mb-7 border-t border-white/[0.06] pt-3.5 sm:pt-5">
                     {srv.specs.map((spec, i) => (
-                      <div key={i} className="flex items-center gap-2.5 text-xs font-mono text-neutral-300">
+                      <div key={i} className="flex items-center gap-2 text-[11px] sm:text-xs font-mono text-neutral-300">
                         <span className="w-1.5 h-1.5 rounded-full bg-amber-400 shrink-0"></span>
-                        <span>{spec}</span>
+                        <span className="truncate">{spec}</span>
                       </div>
                     ))}
                   </div>
                 </div>
 
                 {/* Footer Action */}
-                <div className="pt-5 border-t border-white/[0.06] flex items-center justify-between">
-                  <span className="text-[11px] font-mono text-neutral-500 uppercase">
+                <div className="pt-3.5 sm:pt-5 border-t border-white/[0.06] flex items-center justify-between">
+                  <span className="text-[10px] sm:text-[11px] font-mono text-neutral-500 uppercase">
                     VARANASI BAY
                   </span>
                   <button
@@ -192,30 +192,30 @@ export default function Services({ onSelectService }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-40px' }}
             transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="rounded-3xl p-8 bg-gradient-to-br from-amber-500/[0.08] via-neutral-900/80 to-neutral-900/60 border border-amber-400/30 backdrop-blur-xl flex flex-col justify-between"
+            className="rounded-2xl sm:rounded-3xl p-5 sm:p-8 bg-gradient-to-br from-amber-500/[0.08] via-neutral-900/80 to-neutral-900/60 border border-amber-400/30 backdrop-blur-xl flex flex-col justify-between"
           >
             <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-400/10 border border-amber-400/20 text-amber-300 text-xs font-mono uppercase tracking-wider mb-6">
-                <Sparkles className="w-3.5 h-3.5" />
+              <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full bg-amber-400/10 border border-amber-400/20 text-amber-300 text-[10px] sm:text-xs font-mono uppercase tracking-wider mb-4 sm:mb-6">
+                <Sparkles className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
                 <span>CUSTOM SPECIFICATION</span>
               </div>
               
-              <h3 className="text-2xl sm:text-3xl font-extrabold font-heading tracking-tight text-white mb-3">
+              <h3 className="text-lg sm:text-3xl font-extrabold font-heading tracking-tight text-white mb-2 sm:mb-3">
                 LOOKING FOR CUSTOM COMBINATION CARE?
               </h3>
-              <p className="text-xs sm:text-sm text-neutral-400 leading-relaxed mb-8">
+              <p className="text-xs sm:text-sm text-neutral-400 leading-relaxed mb-6 sm:mb-8 font-normal">
                 Need engine bay degreasing, AC ozone sanitization, or fleet washing? Call our garage desk directly for instant queue assessment and custom package pricing.
               </p>
             </div>
 
-            <div className="space-y-3 pt-6 border-t border-white/[0.08]">
+            <div className="space-y-3 pt-4 sm:pt-6 border-t border-white/[0.08]">
               <a
                 href="tel:08115463232"
-                className="w-full btn-luxury-primary py-4 text-xs font-bold flex items-center justify-center gap-2 cursor-pointer shadow-xl shadow-amber-500/10"
+                className="w-full btn-luxury-primary py-3 sm:py-4 text-xs font-bold flex items-center justify-center gap-2 cursor-pointer shadow-lg shadow-amber-500/10"
               >
-                <PhoneCall className="w-4 h-4" />
+                <PhoneCall className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                 <span>CALL 081154 63232</span>
-                <ArrowUpRight className="w-4 h-4" />
+                <ArrowUpRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
               </a>
             </div>
           </motion.div>

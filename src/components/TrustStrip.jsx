@@ -36,34 +36,34 @@ export default function TrustStrip() {
   ];
 
   return (
-    <section className="relative -mt-6 z-20 max-w-7xl mx-auto px-6 sm:px-8">
+    <section className="relative -mt-4 sm:-mt-6 z-20 max-w-7xl mx-auto px-4 sm:px-8">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: '-40px' }}
         transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-        className="glass-panel rounded-3xl p-6 sm:p-8 backdrop-blur-2xl bg-neutral-900/60 border border-white/[0.08]"
+        className="glass-panel rounded-2xl sm:rounded-3xl p-3.5 sm:p-7 backdrop-blur-2xl bg-neutral-900/80 border border-white/[0.08] shadow-2xl"
       >
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 lg:gap-8">
+        {/* Horizontal scroll container on mobile, fits seamlessly without breaking screen */}
+        <div className="flex md:grid md:grid-cols-5 gap-3 sm:gap-6 overflow-x-auto no-scrollbar scroll-smooth snap-x snap-mandatory py-1 -my-1">
           {metrics.map((item, idx) => (
             <div
               key={idx}
-              className="border-l border-white/[0.08] pl-5 flex flex-col justify-between"
+              className="snap-start shrink-0 min-w-[135px] sm:min-w-0 flex-1 border-l border-amber-400/30 pl-3 sm:pl-4 flex flex-col justify-between"
             >
-              <div
-                className={`text-2xl sm:text-3xl font-extrabold font-heading tracking-tight mb-1.5 ${
-                  item.accent
-                    ? 'text-transparent bg-clip-text bg-gradient-to-r from-amber-300 to-amber-500'
-                    : 'text-white'
-                }`}
-              >
+              {/* Yellow Figure Heading */}
+              <div className="text-lg sm:text-2xl lg:text-3xl font-extrabold font-heading tracking-tight text-amber-400 mb-0.5">
                 {item.figure}
               </div>
+
               <div>
-                <div className="text-xs font-mono font-bold uppercase tracking-wider text-neutral-200">
+                {/* Yellow Title Heading */}
+                <div className="text-[10px] sm:text-xs font-mono font-bold uppercase tracking-wider text-amber-300/90 leading-tight">
                   {item.title}
                 </div>
-                <div className="text-xs text-neutral-400 mt-0.5 font-normal leading-relaxed">
+
+                {/* White Context */}
+                <div className="text-[10px] sm:text-xs text-white/90 mt-0.5 sm:mt-1 font-medium leading-snug">
                   {item.desc}
                 </div>
               </div>
