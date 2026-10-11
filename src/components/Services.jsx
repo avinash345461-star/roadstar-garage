@@ -1,94 +1,23 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowUpRight, Sparkles, PhoneCall } from 'lucide-react';
+import { Sparkles, ArrowUpRight, Phone, ShieldCheck } from 'lucide-react';
 
 export default function Services({ onSelectService }) {
-  const services = [
-    {
-      id: 'car-wash',
-      number: '01',
-      title: 'PRECISION EXTERIOR CAR WASH',
-      category: 'EXTERIOR CARE',
-      description: 'Comprehensive high-pressure multi-stage wash covering body contours, wheel arches, glass, and sill lines with microfiber dry finish.',
-      image: '/roadstars-google-review-wash.jpg',
-      specs: ['Two-bucket wash system', 'Tire shine & wheel degreasing', 'Streak-free glass wipe'],
-    },
-    {
-      id: 'foam-wash',
-      number: '02',
-      title: 'HIGH-DENSITY SNOW FOAM WASH',
-      category: 'DEEP CLEAN',
-      description: 'Thick pH-neutral active foam blanket that emulsifies and lifts stubborn traffic film and grit without abrasive micro-marring.',
-      image: '/roadstars-foam-wash.jpg',
-      specs: ['Safe on clear coats & PPF', 'Crevice agitation with soft brush', 'De-ionized water rinse'],
-    },
-    {
-      id: 'pressure-wash',
-      number: '03',
-      title: 'HIGH-PRESSURE DEBRIS BLAST',
-      category: 'HEAVY DUTY',
-      description: 'High-bar calibrated water jetting designed to remove deep road tar, caked mud, and grit from wheels, grilles, and arches.',
-      image: '/roadstars-pressure-wash-action.jpg',
-      specs: ['Targeted nozzle pressure', 'Fender liner flush', 'Suspension & hub de-dusting'],
-    },
-    {
-      id: 'interior-cleaning',
-      number: '04',
-      title: 'CABIN DEEP VACUUM & SANITIZATION',
-      category: 'CABIN DETAIL',
-      description: 'Industrial high-suction vacuum extraction, seat fabric/leather treatment, mat dry cleaning, and dashboard UV satin finish.',
-      image: '/roadstars-vacuum-cleaning.jpg',
-      specs: ['Industrial extraction', 'AC vent crevice brushing', 'Odor neutralizer treatment'],
-    },
-    {
-      id: 'bike-wash',
-      number: '05',
-      title: 'SUPERBIKE & MOTORCYCLE DETAILING',
-      category: 'TWO-WHEELER',
-      description: 'Specialized wash station tailored for superbikes and commuters. Swingarm cleaning, chain degrease, engine fin detailing, and alloy polish.',
-      image: '/roadstars-bike-wash.jpg',
-      specs: ['Paddock stand mounting', 'Chain degrease & lube safe', 'Silencer & rim shine'],
-    },
-    {
-      id: 'ceramic-coating',
-      number: '06',
-      title: '9H NANO-CERAMIC COATING & PPF',
-      category: 'SURFACE PROTECTION',
-      description: 'Ultra-hard 9H silicon dioxide nano-shield hand applied for deep mirror gloss, extreme hydrophobicity, UV resistance, and scratch barrier.',
-      image: '/roadstars-ceramic-coating.png',
-      specs: ['Multi-layer 9H formulation', 'Extreme water beading', 'Long-lasting paint gloss'],
-    },
-    {
-      id: 'car-polish',
-      number: '07',
-      title: 'STAGE 1/2 PAINT CORRECTION & POLISH',
-      category: 'PAINT RESTORATION',
-      description: 'Dual-action machine compounding to eliminate swirl marks, light oxidation, and water etching to restore flawless reflective depth.',
-      image: '/roadstars-car-polish.jpg',
-      specs: ['Swirl mark elimination', 'Carnauba / sealant lock', 'High optical clarity'],
-    },
-    {
-      id: 'underbody-wash',
-      number: '08',
-      title: 'HYDRAULIC UNDERBODY WASH & COAT',
-      category: 'CHASSIS CARE',
-      description: 'Vehicle elevation on hydraulic ramps with heavy-duty multi-angle pressure jets to remove salt, rust promoters, and road sludge.',
-      image: '/roadstars-underbody-wash.jpg',
-      specs: ['Ramp lift clearance', 'Exhaust & axle jet wash', 'Anti-corrosion rinse'],
-    },
-    {
-      id: 'robotic-car-wash',
-      number: '09',
-      title: 'TOUCHLESS ROBOTIC HIGH-SPEED WASH',
-      category: 'AUTOMATION',
-      description: 'Automated touchless contour scanning system for high-velocity rinse and rapid exterior conditioning.',
-      image: '/roadstars-robotic-car-wash.jpg',
-      specs: ['Rapid 15-minute cycle', 'Zero brush contact', 'Even chemical dispersion'],
-    },
+  const serviceList = [
+    { name: 'Bike Wash', tag: 'TWO-WHEELER', desc: 'Paddock stand mounting, chain degreasing, safe pressure wash & blower dry.' },
+    { name: 'Car Wash', tag: 'FOUR-WHEELER', desc: 'Precision multi-stage exterior body wash, arches cleaning & streak-free dry.' },
+    { name: 'Foam Wash', tag: 'HIGH-DENSITY', desc: 'Thick pH-neutral snow foam bath lifting grime without micro-marring paint.' },
+    { name: 'Under Body Wash', tag: 'CHASSIS CARE', desc: 'High-pressure undercarriage jetting removing road salt, caked mud & tar.' },
+    { name: 'Interior Clean', tag: 'CABIN DETAIL', desc: 'Deep upholstery extraction, dashboard UV satin polish & stain treatment.' },
+    { name: 'Vaccume', tag: 'DEEP SUCTION', desc: 'High-power industrial vacuuming for carpets, boot space, seats & crevices.' },
+    { name: 'Robotics Wash', tag: 'PRECISION AUTO', desc: 'Automated calibrated touchless contour wash for flawless showroom finish.' },
   ];
 
   return (
-    <section id="services" className="relative py-14 sm:py-24 md:py-36 bg-black border-b border-white/[0.06]">
+    <section id="services" className="relative py-16 sm:py-24 md:py-36 bg-black border-b border-white/[0.06] overflow-hidden">
+      {/* Ambient background glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] bg-amber-500/[0.04] rounded-full blur-[140px] pointer-events-none"></div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-8 relative z-10">
         
         {/* Section Header */}
@@ -97,128 +26,136 @@ export default function Services({ onSelectService }) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-          className="flex flex-col lg:flex-row lg:items-end justify-between mb-8 sm:mb-20 gap-4 sm:gap-8"
+          className="flex flex-col lg:flex-row lg:items-end justify-between mb-10 sm:mb-16 gap-4 sm:gap-8"
         >
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-400/[0.08] border border-amber-400/20 mb-3 sm:mb-4">
-              <Sparkles className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-amber-400" />
+              <Sparkles className="w-3.5 h-3.5 text-amber-400" />
               <span className="text-[10px] sm:text-[11px] font-mono uppercase tracking-widest text-amber-300 font-medium">
-                CATALOG // VEHICLE CARE & DETAILING
+                SERVICES WE PROVIDE // BAY SPECIFICATIONS
               </span>
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-6xl font-extrabold tracking-tight text-white font-heading">
               SERVICES & SPECIFICATIONS.
             </h2>
           </div>
-          <p className="text-sm sm:text-base text-neutral-300 sm:text-neutral-400 max-w-lg font-normal leading-relaxed">
-            Every service at Roadstar's Garage is carried out using dedicated automotive formulations and trained technicians. Select a package to schedule in our Varanasi bays.
+          <p className="text-sm sm:text-base text-neutral-300 max-w-lg font-normal leading-relaxed">
+            Every wash and detail package is performed using dedicated formulations, calibrated water pressures, and trained hands in our Varanasi bays.
           </p>
         </motion.div>
 
-        {/* Technical Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-          {services.map((srv, idx) => (
+        {/* Floating Marquee Animation Strip for Services */}
+        <div className="mb-10 sm:mb-14 relative overflow-hidden -mx-4 sm:-mx-8 px-4 sm:px-8 py-3">
+          <div className="absolute left-0 top-0 bottom-0 w-12 sm:w-24 bg-gradient-to-r from-black via-black/80 to-transparent z-10 pointer-events-none"></div>
+          <div className="absolute right-0 top-0 bottom-0 w-12 sm:w-24 bg-gradient-to-l from-black via-black/80 to-transparent z-10 pointer-events-none"></div>
+
+          <motion.div
+            className="flex gap-4 sm:gap-6 w-max"
+            animate={{ x: ['0%', '-50%'] }}
+            transition={{
+              repeat: Infinity,
+              repeatType: 'loop',
+              duration: 20,
+              ease: 'linear',
+            }}
+          >
+            {[...serviceList, ...serviceList].map((srv, idx) => (
+              <div
+                key={`marquee-${srv.name}-${idx}`}
+                className="flex items-center gap-2.5 px-4 sm:px-6 py-2.5 sm:py-3.5 rounded-full bg-neutral-900/90 border border-amber-400/30 backdrop-blur-xl shadow-lg shrink-0 group hover:border-amber-400 transition-colors"
+              >
+                <span className="text-amber-400 text-sm sm:text-base font-bold">🔹</span>
+                <span className="text-xs sm:text-sm font-bold uppercase tracking-wider font-heading text-white group-hover:text-amber-300 transition-colors whitespace-nowrap">
+                  {srv.name}
+                </span>
+                <span className="text-[9px] sm:text-[10px] font-mono text-amber-400/80 bg-amber-400/10 px-2 py-0.5 rounded-full border border-amber-400/20">
+                  {srv.tag}
+                </span>
+              </div>
+            ))}
+          </motion.div>
+        </div>
+
+        {/* Bullet Points Grid of Services Provided */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-12">
+          {serviceList.map((service, index) => (
             <motion.div
-              key={srv.id}
-              initial={{ opacity: 0, y: 25 }}
+              key={service.name}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-40px' }}
-              transition={{ duration: 0.6, delay: (idx % 3) * 0.1, ease: [0.16, 1, 0.3, 1] }}
-              whileHover={{ y: -6 }}
-              className="glass-panel-hover rounded-2xl sm:rounded-3xl overflow-hidden flex flex-col justify-between group"
+              transition={{ duration: 0.5, delay: index * 0.08, ease: [0.16, 1, 0.3, 1] }}
+              whileHover={{ y: -4, borderColor: 'rgba(245, 196, 0, 0.4)' }}
+              className="glass-panel-hover rounded-2xl p-5 sm:p-6 flex flex-col justify-between group transition-all"
             >
-              {/* Image Container with Luxury Frost Badge */}
-              <div className="relative aspect-[16/9] sm:aspect-[16/10] overflow-hidden bg-neutral-900">
-                <img
-                  src={srv.image}
-                  alt={srv.title}
-                  className="w-full h-full object-cover grayscale-[15%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out"
-                  loading="lazy"
-                />
-                
-                {/* Category Badge */}
-                <div className="absolute top-3 right-3 sm:top-3.5 sm:right-3.5 px-2.5 py-1 sm:px-3 sm:py-1 rounded-md sm:rounded-lg bg-black/80 border border-white/10 backdrop-blur-md text-[10px] sm:text-[10px] font-mono uppercase tracking-widest text-neutral-200">
-                  {srv.category}
+              <div>
+                <div className="flex items-center justify-between mb-3.5">
+                  <div className="flex items-center gap-2.5">
+                    <span className="text-amber-400 text-base sm:text-lg">🔹</span>
+                    <h3 className="text-base sm:text-xl font-bold font-heading text-white group-hover:text-amber-300 transition-colors uppercase tracking-tight">
+                      {service.name}
+                    </h3>
+                  </div>
+                  <span className="text-[9px] sm:text-[10px] font-mono uppercase tracking-wider text-neutral-400 bg-neutral-900 px-2 py-0.5 rounded-md border border-white/[0.08]">
+                    {service.tag}
+                  </span>
                 </div>
+
+                <p className="text-xs sm:text-sm text-neutral-300 leading-relaxed font-normal mb-5 pl-7">
+                  {service.desc}
+                </p>
               </div>
 
-              {/* Card Body */}
-              <div className="p-5 sm:p-7 flex flex-col flex-grow justify-between">
-                <div>
-                  <h3 className="text-lg sm:text-xl font-bold font-heading tracking-tight text-white mb-2 sm:mb-3 group-hover:text-amber-300 transition-colors leading-snug">
-                    {srv.title}
-                  </h3>
-                  
-                  <p className="text-xs sm:text-sm text-neutral-300 sm:text-neutral-400 leading-relaxed mb-4 sm:mb-6 font-normal">
-                    {srv.description}
-                  </p>
-
-                  {/* Specification list */}
-                  <div className="space-y-2 sm:space-y-2.5 mb-5 sm:mb-7 border-t border-white/[0.06] pt-4 sm:pt-5">
-                    {srv.specs.map((spec, i) => (
-                      <div key={i} className="flex items-center gap-2.5 text-xs font-mono text-neutral-200 sm:text-neutral-300">
-                        <span className="w-1.5 h-1.5 rounded-full bg-amber-400 shrink-0"></span>
-                        <span className="truncate">{spec}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Footer Action */}
-                <div className="pt-4 sm:pt-5 border-t border-white/[0.06] flex items-center justify-between">
-                  <span className="text-[11px] font-mono text-neutral-400 sm:text-neutral-500 uppercase">
-                    VARANASI BAY
-                  </span>
-                  <button
-                    onClick={() => onSelectService(srv.title)}
-                    className="flex items-center gap-1.5 text-xs sm:text-sm font-bold uppercase tracking-wider text-neutral-100 group-hover:text-amber-400 transition-colors cursor-pointer"
-                  >
-                    <span>SCHEDULE THIS</span>
-                    <ArrowUpRight className="w-4 h-4 text-amber-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                  </button>
-                </div>
+              <div className="pt-3.5 border-t border-white/[0.06] flex items-center justify-between pl-7">
+                <span className="text-[10px] sm:text-[11px] font-mono text-neutral-500 uppercase">
+                  ROADSTAR'S VARANASI BAY
+                </span>
+                <button
+                  onClick={() => onSelectService(service.name)}
+                  className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-amber-300 hover:text-amber-400 transition-colors cursor-pointer"
+                >
+                  <span>BOOK BAY</span>
+                  <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                </button>
               </div>
             </motion.div>
           ))}
 
-          {/* Custom Requirement Inquiry Box */}
+          {/* Quick Custom Package Callout */}
           <motion.div
-            initial={{ opacity: 0, y: 25 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-40px' }}
-            transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="rounded-2xl sm:rounded-3xl p-5 sm:p-8 bg-gradient-to-br from-amber-500/[0.08] via-neutral-900/80 to-neutral-900/60 border border-amber-400/30 backdrop-blur-xl flex flex-col justify-between"
+            transition={{ duration: 0.5, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
+            className="rounded-2xl p-5 sm:p-6 bg-gradient-to-br from-amber-500/[0.12] via-neutral-900/80 to-neutral-900/60 border border-amber-400/30 backdrop-blur-xl flex flex-col justify-between"
           >
             <div>
-              <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full bg-amber-400/10 border border-amber-400/20 text-amber-300 text-[10px] sm:text-xs font-mono uppercase tracking-wider mb-4 sm:mb-6">
-                <Sparkles className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
-                <span>CUSTOM SPECIFICATION</span>
+              <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-amber-400/10 border border-amber-400/20 text-amber-300 text-[10px] sm:text-xs font-mono uppercase tracking-wider mb-3">
+                <ShieldCheck className="w-3.5 h-3.5" />
+                <span>ALL-IN-ONE CARE</span>
               </div>
-              
-              <h3 className="text-lg sm:text-3xl font-extrabold font-heading tracking-tight text-white mb-2 sm:mb-3">
-                LOOKING FOR CUSTOM COMBINATION CARE?
+              <h3 className="text-lg sm:text-xl font-bold font-heading uppercase text-white mb-2">
+                CUSTOM COMBO SERVICE
               </h3>
-              <p className="text-xs sm:text-sm text-neutral-400 leading-relaxed mb-6 sm:mb-8 font-normal">
-                Need engine bay degreasing, AC ozone sanitization, or fleet washing? Call our garage desk directly for instant queue assessment and custom package pricing.
+              <p className="text-xs sm:text-sm text-neutral-300 leading-relaxed font-normal mb-4">
+                Combine exterior robotics wash, underbody chassis blast & deep vacuuming in a single bay visit.
               </p>
             </div>
 
-            <div className="space-y-3 pt-4 sm:pt-6 border-t border-white/[0.08]">
+            <div className="pt-3.5 border-t border-white/[0.08]">
               <a
                 href="tel:08115463232"
-                className="w-full btn-luxury-primary py-3 sm:py-4 text-xs font-bold flex items-center justify-center gap-2 cursor-pointer shadow-lg shadow-amber-500/10"
+                className="w-full btn-luxury-primary py-3 text-xs font-bold flex items-center justify-center gap-2 cursor-pointer shadow-lg shadow-amber-500/10"
               >
-                <PhoneCall className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                <Phone className="w-3.5 h-3.5" />
                 <span>CALL 081154 63232</span>
-                <ArrowUpRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                <ArrowUpRight className="w-3.5 h-3.5" />
               </a>
             </div>
           </motion.div>
-
         </div>
+
       </div>
     </section>
   );
 }
-
-
