@@ -143,51 +143,62 @@ export default function SocialSection() {
           </p>
         </motion.div>
 
-        {/* Channels Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-7">
-          {channels.map((chan, idx) => (
-            <motion.a
-              key={chan.name}
-              href={chan.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-40px' }}
-              transition={{ duration: 0.6, delay: idx * 0.1, ease: [0.16, 1, 0.3, 1] }}
-              whileHover={{ y: -6 }}
-              className="glass-panel-hover rounded-2xl sm:rounded-3xl p-5 sm:p-8 flex flex-col justify-between group"
-            >
-              <div>
-                <div className="flex items-center justify-between mb-4 sm:mb-6 pb-3 sm:pb-4 border-b border-white/[0.06]">
-                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-neutral-900 border border-white/10 flex items-center justify-center text-neutral-300 group-hover:text-amber-400 group-hover:border-amber-400/30 transition-colors">
-                    {chan.icon}
+        {/* Continuous Horizontal Moving Marquee Container */}
+        <div className="relative overflow-hidden -mx-4 sm:-mx-8 px-4 sm:px-8 py-2">
+          {/* Subtle edge fade gradient */}
+          <div className="absolute left-0 top-0 bottom-0 w-12 sm:w-20 bg-gradient-to-r from-black via-black/80 to-transparent z-10 pointer-events-none"></div>
+          <div className="absolute right-0 top-0 bottom-0 w-12 sm:w-20 bg-gradient-to-l from-black via-black/80 to-transparent z-10 pointer-events-none"></div>
+
+          <motion.div
+            className="flex gap-5 sm:gap-7 w-max"
+            animate={{ x: ['0%', '-50%'] }}
+            transition={{
+              repeat: Infinity,
+              repeatType: 'loop',
+              duration: 25,
+              ease: 'linear',
+            }}
+          >
+            {/* Duplicated array for seamless continuous loop */}
+            {[...channels, ...channels].map((chan, idx) => (
+              <a
+                key={`${chan.name}-${idx}`}
+                href={chan.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="glass-panel-hover rounded-2xl sm:rounded-3xl p-5 sm:p-7 flex flex-col justify-between group w-[280px] sm:w-[320px] shrink-0"
+              >
+                <div>
+                  <div className="flex items-center justify-between mb-4 sm:mb-6 pb-3 sm:pb-4 border-b border-white/[0.06]">
+                    <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-neutral-900 border border-white/10 flex items-center justify-center text-neutral-300 group-hover:text-amber-400 group-hover:border-amber-400/30 transition-colors">
+                      {chan.icon}
+                    </div>
+                    <span className="text-[10px] font-mono uppercase tracking-wider text-neutral-400 bg-neutral-900 px-2.5 py-1 rounded-lg border border-white/[0.06]">
+                      {chan.tag}
+                    </span>
                   </div>
-                  <span className="text-[9px] sm:text-[10px] font-mono uppercase tracking-wider text-neutral-400 bg-neutral-900 px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-md sm:rounded-lg border border-white/[0.06]">
-                    {chan.tag}
+
+                  <h3 className="text-base sm:text-lg font-bold font-heading tracking-tight text-white mb-1 group-hover:text-amber-300 transition-colors flex items-center justify-between">
+                    <span>{chan.name}</span>
+                    <ArrowUpRight className="w-4 h-4 text-neutral-500 group-hover:text-amber-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+                  </h3>
+
+                  <span className="text-xs font-mono text-amber-400 block mb-2 sm:mb-3 font-semibold">
+                    {chan.handle}
                   </span>
+
+                  <p className="text-xs text-neutral-400 leading-relaxed font-normal">
+                    {chan.desc}
+                  </p>
                 </div>
 
-                <h3 className="text-base sm:text-xl font-bold font-heading tracking-tight text-white mb-1 group-hover:text-amber-300 transition-colors flex items-center justify-between">
-                  <span>{chan.name}</span>
-                  <ArrowUpRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-neutral-500 group-hover:text-amber-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
-                </h3>
-
-                <span className="text-[11px] sm:text-xs font-mono text-amber-400 block mb-2 sm:mb-3 font-semibold">
-                  {chan.handle}
-                </span>
-
-                <p className="text-xs text-neutral-400 leading-relaxed font-normal">
-                  {chan.desc}
-                </p>
-              </div>
-
-              <div className="pt-4 sm:pt-6 border-t border-white/[0.06] mt-4 sm:mt-6 text-[11px] sm:text-xs font-mono text-neutral-400 group-hover:text-neutral-200 flex items-center justify-between">
-                <span>CONNECT</span>
-                <span>→</span>
-              </div>
-            </motion.a>
-          ))}
+                <div className="pt-4 sm:pt-5 border-t border-white/[0.06] mt-4 sm:mt-5 text-xs font-mono text-neutral-400 group-hover:text-neutral-200 flex items-center justify-between">
+                  <span>CONNECT</span>
+                  <span>→</span>
+                </div>
+              </a>
+            ))}
+          </motion.div>
         </div>
 
       </div>
