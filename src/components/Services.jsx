@@ -44,6 +44,40 @@ export default function Services({ onSelectService }) {
           </p>
         </motion.div>
 
+        {/* Always Horizontal Moving Services Marquee */}
+        <div className="mb-8 sm:mb-12 relative overflow-hidden -mx-4 sm:-mx-8 px-4 sm:px-8 py-2">
+          {/* Edge fade gradients */}
+          <div className="absolute left-0 top-0 bottom-0 w-10 sm:w-20 bg-gradient-to-r from-black via-black/80 to-transparent z-10 pointer-events-none"></div>
+          <div className="absolute right-0 top-0 bottom-0 w-10 sm:w-20 bg-gradient-to-l from-black via-black/80 to-transparent z-10 pointer-events-none"></div>
+
+          <motion.div
+            className="flex gap-3 sm:gap-5 w-max"
+            animate={{ x: ['0%', '-50%'] }}
+            transition={{
+              repeat: Infinity,
+              repeatType: 'loop',
+              duration: 20,
+              ease: 'linear',
+            }}
+          >
+            {[...serviceList, ...serviceList].map((srv, idx) => (
+              <div
+                key={`marquee-${srv.name}-${idx}`}
+                onClick={() => onSelectService(srv.name)}
+                className="flex items-center gap-2 px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-full bg-neutral-900/90 border border-amber-400/30 backdrop-blur-xl shadow-md shrink-0 cursor-pointer group hover:border-amber-400 transition-colors"
+              >
+                <span className="text-amber-400 text-sm font-bold">🔹</span>
+                <span className="text-xs sm:text-sm font-bold uppercase tracking-wider font-heading text-white group-hover:text-amber-300 transition-colors whitespace-nowrap">
+                  {srv.name}
+                </span>
+                <span className="text-[9px] sm:text-[10px] font-mono text-amber-400/80 bg-amber-400/10 px-2 py-0.5 rounded-full border border-amber-400/20">
+                  {srv.tag}
+                </span>
+              </div>
+            ))}
+          </motion.div>
+        </div>
+
         {/* Vertical Stacked List of Services */}
         <div className="flex flex-col space-y-3 sm:space-y-4 mb-10">
           {serviceList.map((service, index) => (
