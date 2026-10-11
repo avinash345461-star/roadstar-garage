@@ -136,11 +136,6 @@ export default function Services({ onSelectService }) {
                   loading="lazy"
                 />
                 
-                {/* Number Badge */}
-                <div className="absolute top-2.5 left-2.5 sm:top-3.5 sm:left-3.5 px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-md sm:rounded-lg bg-black/80 border border-white/10 backdrop-blur-md text-[11px] sm:text-xs font-mono font-bold text-amber-400">
-                  #{srv.number}
-                </div>
-
                 {/* Category Badge */}
                 <div className="absolute top-2.5 right-2.5 sm:top-3.5 sm:right-3.5 px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-md sm:rounded-lg bg-black/80 border border-white/10 backdrop-blur-md text-[9px] sm:text-[10px] font-mono uppercase tracking-widest text-neutral-300">
                   {srv.category}
