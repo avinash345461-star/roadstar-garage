@@ -56,9 +56,10 @@ export default function Services({ onSelectService }) {
             transition={{
               repeat: Infinity,
               repeatType: 'loop',
-              duration: 20,
+              duration: 40,
               ease: 'linear',
             }}
+            whileHover={{ animationPlayState: 'paused' }}
           >
             {[...serviceList, ...serviceList].map((srv, idx) => (
               <div

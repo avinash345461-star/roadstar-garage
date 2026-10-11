@@ -155,9 +155,10 @@ export default function SocialSection() {
             transition={{
               repeat: Infinity,
               repeatType: 'loop',
-              duration: 25,
+              duration: 50,
               ease: 'linear',
             }}
+            whileHover={{ animationPlayState: 'paused' }}
           >
             {/* Duplicated array for seamless continuous loop */}
             {[...channels, ...channels].map((chan, idx) => (

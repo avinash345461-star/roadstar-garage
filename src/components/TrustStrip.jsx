@@ -55,9 +55,10 @@ export default function TrustStrip() {
           transition={{
             repeat: Infinity,
             repeatType: 'loop',
-            duration: 22,
+            duration: 45,
             ease: 'linear',
           }}
+          whileHover={{ animationPlayState: 'paused' }}
         >
           {/* Duplicated metrics for continuous seamless looping */}
           {[...metrics, ...metrics].map((item, idx) => (
