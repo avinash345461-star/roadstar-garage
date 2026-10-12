@@ -165,6 +165,27 @@
   scrollbar-width: none;
 }
 
+/* Continuous Horizontal Marquee */
+@keyframes marquee-horizontal {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.animate-marquee-continuous {
+  display: flex;
+  width: max-content;
+  animation: marquee-horizontal 28s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-continuous:hover {
+  animation-play-state: paused;
+}
+
 /* Premium Pure Dark Luxury Buttons */
 .btn-luxury-primary {
   background: linear-gradient(135deg, #F5C400 0%, #E5B200 100%);

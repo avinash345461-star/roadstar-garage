@@ -80,43 +80,43 @@ export default function CustomerReviews() {
           </div>
         </motion.div>
 
-        {/* Real Customer Quotes Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-7">
-          {reviews.map((rev, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-40px' }}
-              transition={{ duration: 0.6, delay: (idx % 3) * 0.1, ease: [0.16, 1, 0.3, 1] }}
-              whileHover={{ y: -6 }}
-              className={`glass-panel-hover rounded-2xl sm:rounded-3xl p-6 sm:p-8 flex flex-col justify-between group ${
-                idx === 4 ? 'md:col-span-2 lg:col-span-2' : ''
-              }`}
-            >
-              <div>
-                <div className="flex items-center justify-between mb-4 sm:mb-6 pb-3 sm:pb-4 border-b border-white/[0.06]">
-                  <span className="text-[11px] font-mono uppercase tracking-wider text-amber-300 bg-amber-400/10 px-3 py-1 rounded-lg border border-amber-400/20">
-                    {rev.tag}
-                  </span>
-                  <div className="flex text-amber-400">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-3.5 h-3.5 fill-amber-400" />
-                    ))}
+        {/* Always Horizontally Moving Customer Reviews - Single Horizontal Layer */}
+        <div className="relative overflow-hidden py-2 -mx-4 sm:-mx-8 px-4 sm:px-8">
+          {/* Subtle edge fade gradient masks */}
+          <div className="absolute left-0 top-0 bottom-0 w-6 sm:w-16 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none"></div>
+          <div className="absolute right-0 top-0 bottom-0 w-6 sm:w-16 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none"></div>
+
+          {/* Single horizontal flex row with continuous smooth marquee */}
+          <div className="animate-marquee-continuous flex flex-nowrap gap-4 sm:gap-6 py-2">
+            {[...reviews, ...reviews].map((rev, idx) => (
+              <div
+                key={idx}
+                className="shrink-0 w-[270px] sm:w-[340px] md:w-[380px] glass-panel-hover rounded-2xl sm:rounded-3xl p-5 sm:p-6 flex flex-col justify-between group transition-all"
+              >
+                <div>
+                  <div className="flex items-center justify-between mb-3 pb-2.5 border-b border-white/[0.06]">
+                    <span className="text-[10px] sm:text-[11px] font-mono uppercase tracking-wider text-amber-300 bg-amber-400/10 px-2.5 py-1 rounded-lg border border-amber-400/20">
+                      {rev.tag}
+                    </span>
+                    <div className="flex text-amber-400">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="w-3.5 h-3.5 fill-amber-400" />
+                      ))}
+                    </div>
                   </div>
+
+                  <blockquote className="text-xs sm:text-sm font-medium text-neutral-100 sm:text-neutral-200 leading-relaxed mb-4 line-clamp-3">
+                    "{rev.quote}"
+                  </blockquote>
                 </div>
 
-                <blockquote className="text-sm sm:text-base lg:text-lg font-medium text-neutral-100 sm:text-neutral-200 leading-relaxed mb-5 sm:mb-8">
-                  "{rev.quote}"
-                </blockquote>
+                <div className="pt-3 border-t border-white/[0.06] flex items-center justify-between text-xs font-mono text-neutral-400">
+                  <span className="text-white uppercase font-semibold text-[11px] sm:text-xs">{rev.author}</span>
+                  <span className="text-[11px] sm:text-xs text-amber-400/80">{rev.location}</span>
+                </div>
               </div>
-
-              <div className="pt-4 sm:pt-5 border-t border-white/[0.06] flex items-center justify-between text-xs font-mono text-neutral-400">
-                <span className="text-white uppercase font-semibold">{rev.author}</span>
-                <span>{rev.location}</span>
-              </div>
-            </motion.div>
-          ))}
+            ))}
+          </div>
         </div>
 
         {/* Google Review Prompt Glass Strip */}
