@@ -1,27 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import React from 'react';
+import { motion } from 'framer-motion';
 import { MapPin, ArrowUpRight, Star, ShieldCheck, Sparkles } from 'lucide-react';
 
 export default function Hero({ onOpenBooking }) {
   const googleMapsUrl =
     'https://www.google.com/maps/place/Roadstar%E2%80%99s+Garage/@25.3544559,83.0113916,17z/data=!4m6!3m5!1s0x398e2ff189e879c1:0x84dc4f29b4a3c33d!8m2!3d25.3544559!4d83.0113916!16s%2Fg%2F11pyzdp0s_';
-
-  const [isMobileScreen, setIsMobileScreen] = useState(false);
-
-  useEffect(() => {
-    const checkScreen = () => {
-      // Check for mobile or portrait screen (e.g. 9:16 mobile viewports)
-      setIsMobileScreen(window.innerWidth < 768);
-    };
-    checkScreen();
-    window.addEventListener('resize', checkScreen);
-    return () => window.removeEventListener('resize', checkScreen);
-  }, []);
-
-  const { scrollY } = useScroll();
-  // On mobile 9:16, starts prominent and filled (1.18x) and smoothly settles to standard 1.0x as user scrolls past 140px
-  const dynamicMobileScale = useTransform(scrollY, [0, 160], [1.18, 1]);
-  const mobileScale = isMobileScreen ? dynamicMobileScale : 1;
 
   return (
     <section id="home" className="relative pt-24 pb-14 sm:pt-32 sm:pb-20 md:pt-44 md:pb-32 overflow-hidden bg-black border-b border-white/[0.06]">
@@ -51,24 +34,18 @@ export default function Hero({ onOpenBooking }) {
               </span>
             </motion.div>
 
-            {/* Dominant Headline with responsive dynamic scale on scroll for mobile portrait / 9:16 screens */}
-            <div className="mb-4 sm:mb-6">
-              <motion.h1
-                style={{
-                  scale: mobileScale,
-                  transformOrigin: 'left top',
-                }}
-                className="text-[clamp(2.4rem,10.5vw,4.8rem)] sm:text-6xl lg:text-7xl xl:text-8xl font-black tracking-tight uppercase text-white font-heading leading-[1.04] sm:leading-[0.98] drop-shadow-[0_10px_25px_rgba(0,0,0,0.8)] break-words transition-transform duration-75 will-change-transform"
-              >
-                BUILT FOR THE ROAD.{' '}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-amber-400 to-amber-500 block mt-1 sm:mt-2 font-black filter drop-shadow-[0_0_35px_rgba(245,196,0,0.35)]">
+            {/* Dominant Headline styled with luxury proportion & clean line spacing on mobile & 9:16 */}
+            <div className="mb-5 sm:mb-8">
+              <h1 className="text-[2.2rem] xs:text-[2.6rem] sm:text-6xl lg:text-7xl xl:text-8xl font-black tracking-tight uppercase text-white font-heading leading-[1.1] sm:leading-[0.98] drop-shadow-[0_10px_25px_rgba(0,0,0,0.8)]">
+                <span className="block text-white">BUILT FOR THE ROAD.</span>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-amber-400 to-amber-500 block mt-2 sm:mt-2.5 font-black filter drop-shadow-[0_0_35px_rgba(245,196,0,0.35)]">
                   PERFECTED IN THE BAY.
                 </span>
-              </motion.h1>
+              </h1>
             </div>
 
-            {/* Factual Subtitle */}
-            <p className="text-xs sm:text-base lg:text-lg text-neutral-300 sm:text-neutral-400 max-w-xl font-normal leading-relaxed mb-6 sm:mb-10">
+            {/* Factual Subtitle with clear separation & proper line heights */}
+            <p className="text-[13px] sm:text-base lg:text-lg text-neutral-300 sm:text-neutral-400 max-w-xl font-normal leading-[1.7] sm:leading-relaxed mb-7 sm:mb-10">
               Professional car washing, high-precision foam treatments, interior sanitization, and 9H ceramic coating in Varanasi. Built on genuine craftsmanship, paint-safe formulations, and attention to every millimeter.
             </p>
 
