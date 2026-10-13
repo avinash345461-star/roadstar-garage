@@ -1,23 +1,26 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Phone, MessageSquare, Check, Calendar, Sparkles } from 'lucide-react';
+import { X, Phone, MessageSquare, Check, Sparkles } from 'lucide-react';
 
 export default function BookingModal({ isOpen, onClose, selectedService = '' }) {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
     vehicleType: 'Car',
-    service: selectedService || 'Car Wash',
+    service: 'Car Wash',
     preferredDate: '',
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [prevService, setPrevService] = useState(selectedService);
 
-  useEffect(() => {
+  // Synchronize service selection without triggering cascading render warnings
+  if (selectedService !== prevService) {
+    setPrevService(selectedService);
     if (selectedService) {
       setFormData((prev) => ({ ...prev, service: selectedService }));
     }
-  }, [selectedService]);
+  }
 
   useEffect(() => {
     if (isOpen) {

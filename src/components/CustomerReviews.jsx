@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Star, ArrowUpRight, Sparkles, MessageSquareQuote } from 'lucide-react';
+import { Star, ArrowUpRight, Sparkles } from 'lucide-react';
 
 export default function CustomerReviews() {
   const reviews = [

@@ -2,7 +2,9 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Phone, ArrowUpRight, Sparkles, Navigation } from 'lucide-react';
 
-export default function LocationSection() {
+export default function LocationSection({ asH1 = false }) {
+  const HeadingTag = asH1 ? 'h1' : 'h2';
+
   const googleMapsUrl =
     'https://www.google.com/maps/place/Roadstar%E2%80%99s+Garage/@25.3544559,83.0113916,17z/data=!4m6!3m5!1s0x398e2ff189e879c1:0x84dc4f29b4a3c33d!8m2!3d25.3544559!4d83.0113916!16s%2Fg%2F11pyzdp0s_';
 
@@ -24,9 +26,9 @@ export default function LocationSection() {
               COORDINATES // ARRIVAL & ACCESS
             </span>
           </div>
-          <h2 className="text-2xl sm:text-4xl lg:text-6xl font-extrabold tracking-tight text-white font-heading">
+          <HeadingTag className="text-2xl sm:text-4xl lg:text-6xl font-extrabold tracking-tight text-white font-heading">
             LOCATION & WORKSHOP ACCESS.
-          </h2>
+          </HeadingTag>
         </motion.div>
 
         {/* Location Grid */}

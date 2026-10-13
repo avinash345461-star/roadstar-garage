@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowLeft, Maximize2, X, Filter, ArrowUpRight, Phone, Sparkles } from 'lucide-react';
+import { ArrowLeft, Maximize2, X, ArrowUpRight, Phone, Sparkles } from 'lucide-react';
+import Breadcrumbs from './Breadcrumbs';
 
 export default function PreviousWorksPage({ onBackToHome, onOpenBooking }) {
   const [activeCategory, setActiveCategory] = useState('ALL');
@@ -8,6 +9,7 @@ export default function PreviousWorksPage({ onBackToHome, onOpenBooking }) {
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+    document.title = "Project Archive & Vehicle Finishing Gallery | Roadstar's Garage Varanasi";
   }, []);
 
   // Lock scroll on iOS when lightbox modal is active
@@ -150,7 +152,9 @@ export default function PreviousWorksPage({ onBackToHome, onOpenBooking }) {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 pt-12">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 pt-10">
+        {/* Breadcrumb Hierarchy */}
+        <Breadcrumbs items={[{ label: 'Project Archive' }]} onNavigate={onBackToHome} />
         
         {/* Page Header */}
         <motion.div

@@ -2,7 +2,9 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Phone, ArrowUpRight, Sparkles, CheckCircle2 } from 'lucide-react';
 
-export default function AboutSection({ onOpenBooking }) {
+export default function AboutSection({ onOpenBooking, asH1 = false }) {
+  const HeadingTag = asH1 ? 'h1' : 'h2';
+
   return (
     <section id="about" className="relative py-14 sm:py-24 md:py-36 bg-black border-b border-white/[0.06]">
       <div className="max-w-7xl mx-auto px-4 sm:px-8 relative z-10">
@@ -23,10 +25,10 @@ export default function AboutSection({ onOpenBooking }) {
               </span>
             </div>
 
-            <h2 className="text-2xl sm:text-4xl lg:text-6xl font-extrabold tracking-tight text-white font-heading mb-4 sm:mb-6 leading-tight">
+            <HeadingTag className="text-2xl sm:text-4xl lg:text-6xl font-extrabold tracking-tight text-white font-heading mb-4 sm:mb-6 leading-tight">
               COMMITTED TO EXCELLENCE. <br />
               <span className="text-neutral-400">ROOTED IN VARANASI.</span>
-            </h2>
+            </HeadingTag>
 
             <div className="space-y-3 sm:space-y-4 text-xs sm:text-base text-neutral-400 font-normal leading-relaxed mb-6 sm:mb-8">
               <p>

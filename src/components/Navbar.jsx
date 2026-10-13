@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Phone, ArrowUpRight, MessageSquare, Navigation, Calendar } from 'lucide-react';
 
-export default function Navbar({ onOpenBooking }) {
+export default function Navbar({ onOpenBooking, currentPath = '/', onNavigate }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -29,22 +29,37 @@ export default function Navbar({ onOpenBooking }) {
   }, [mobileMenuOpen]);
 
   const navLinks = [
-    { name: 'Home', href: '#home' },
-    { name: 'Services', href: '#services' },
-    { name: 'Philosophy', href: '#philosophy' },
-    { name: 'Reviews', href: '#reviews' },
-    { name: 'Network', href: '#socials' },
-    { name: 'Studio', href: '#about' },
-    { name: 'Location', href: '#contact' },
+    { name: 'Home', href: '/', hash: '#home' },
+    { name: 'Services', href: '/services', hash: '#services' },
+    { name: 'Gallery', href: '/gallery', hash: '' },
+    { name: 'Studio', href: '/about', hash: '#about' },
+    { name: 'Location', href: '/contact', hash: '#contact' },
   ];
 
   const handleNavClick = (e, link) => {
     e.preventDefault();
     setMobileMenuOpen(false);
 
-    const target = document.querySelector(link.href);
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth' });
+    if (link.href === '/gallery') {
+      if (onNavigate) {
+        onNavigate('/gallery');
+      }
+      return;
+    }
+
+    if (currentPath === '/') {
+      if (link.hash) {
+        const target = document.querySelector(link.hash);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+          return;
+        }
+      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      if (onNavigate) {
+        onNavigate(link.href);
+      }
     }
   };
 
@@ -62,10 +77,15 @@ export default function Navbar({ onOpenBooking }) {
       <div className="max-w-7xl mx-auto px-4 sm:px-8 flex items-center justify-between gap-4">
         {/* Brand Wordmark & Official RG Logo */}
         <a
-          href="#home"
+          href="/"
           onClick={(e) => {
             e.preventDefault();
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            if (currentPath === '/') {
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            } else {
+              if (onNavigate) onNavigate('/');
+              else window.location.href = '/';
+            }
           }}
           className="flex items-center gap-2.5 sm:gap-3.5 group cursor-pointer focus:outline-none shrink-0"
         >
@@ -90,16 +110,23 @@ export default function Navbar({ onOpenBooking }) {
 
         {/* Desktop Navigation Links - Apple Style Frosted Floating Capsule */}
         <nav className="hidden lg:flex items-center gap-1 xl:gap-2 px-3.5 py-1.5 rounded-full apple-glass-pill" aria-label="Main Navigation">
-          {navLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              onClick={(e) => handleNavClick(e, link)}
-              className="text-xs font-medium tracking-wide text-neutral-300 hover:text-white hover:bg-white/[0.1] rounded-full px-4 py-1.5 transition-all duration-200 whitespace-nowrap cursor-pointer"
-            >
-              {link.name}
-            </a>
-          ))}
+          {navLinks.map((link) => {
+            const isActive = currentPath === link.href;
+            return (
+              <a
+                key={link.name}
+                href={link.href}
+                onClick={(e) => handleNavClick(e, link)}
+                className={`text-xs font-medium tracking-wide rounded-full px-4 py-1.5 transition-all duration-200 whitespace-nowrap cursor-pointer ${
+                  isActive
+                    ? 'text-amber-300 bg-amber-400/10 font-bold border border-amber-400/20'
+                    : 'text-neutral-300 hover:text-white hover:bg-white/[0.1]'
+                }`}
+              >
+                {link.name}
+              </a>
+            );
+          })}
         </nav>
 
         {/* Desktop Action Controls */}

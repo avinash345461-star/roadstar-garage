@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 - Bay Not Found | Roadstar's Garage Varanasi</title>
+    <meta name="robots" content="noindex, follow" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/roadstars-logo.png" />
+    <style>
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      body {
+        background-color: #000000;
+        color: #f4f4f5;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        padding: 24px;
+        text-align: center;
+      }
+      .card {
+        background: rgba(20, 20, 22, 0.75);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 24px;
+        padding: 48px 32px;
+        max-width: 540px;
+        width: 100%;
+        backdrop-filter: blur(20px);
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.9);
+      }
+      .badge {
+        display: inline-block;
+        padding: 6px 14px;
+        border-radius: 9999px;
+        background: rgba(245, 196, 0, 0.1);
+        border: 1px solid rgba(245, 196, 0, 0.3);
+        color: #f5c400;
+        font-size: 11px;
+        font-family: monospace;
+        letter-spacing: 2px;
+        margin-bottom: 24px;
+      }
+      h1 {
+        font-size: clamp(3rem, 10vw, 5rem);
+        font-weight: 900;
+        letter-spacing: -2px;
+        line-height: 1;
+        margin-bottom: 12px;
+        color: #ffffff;
+      }
+      h2 {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: #f5c400;
+        margin-bottom: 16px;
+        letter-spacing: -0.5px;
+      }
+      p {
+        font-size: 0.95rem;
+        color: #a1a1aa;
+        line-height: 1.6;
+        margin-bottom: 32px;
+      }
+      .actions {
+        display: flex;
+        gap: 12px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .btn-primary {
+        background: linear-gradient(135deg, #f5c400 0%, #e5b200 100%);
+        color: #000000;
+        font-weight: 700;
+        padding: 14px 28px;
+        border-radius: 12px;
+        text-decoration: none;
+        font-size: 0.875rem;
+        transition: transform 0.2s;
+      }
+      .btn-primary:hover {
+        transform: translateY(-2px);
+      }
+      .btn-glass {
+        background: rgba(255, 255, 255, 0.05);
+        color: #f4f4f5;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        font-weight: 600;
+        padding: 14px 28px;
+        border-radius: 12px;
+        text-decoration: none;
+        font-size: 0.875rem;
+        transition: transform 0.2s;
+      }
+      .btn-glass:hover {
+        transform: translateY(-2px);
+        background: rgba(255, 255, 255, 0.1);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <div class="badge">TELEMETRY ERROR // STATUS 404</div>
+      <h1>404</h1>
+      <h2>BAY NOT FOUND</h2>
+      <p>The vehicle path or bay coordinates you requested do not exist or have been re-indexed. Return to the main garage studio to explore our treatments.</p>
+      <div class="actions">
+        <a href="/" class="btn-primary">RETURN TO STUDIO</a>
+        <a href="/services" class="btn-glass">BROWSE SERVICES</a>
+      </div>
+    </div>
+  </body>
+</html>

@@ -2,7 +2,9 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Sparkles, ArrowRight, ArrowUpRight, Phone, ShieldCheck, CheckCircle2 } from 'lucide-react';
 
-export default function Services({ onSelectService }) {
+export default function Services({ onSelectService, asH1 = false }) {
+  const HeadingTag = asH1 ? 'h1' : 'h2';
+
   const serviceList = [
     { name: 'Bike Wash', tag: 'TWO-WHEELER', desc: 'Paddock stand mounting, chain degreasing, safe pressure wash & blower dry.' },
     { name: 'Car Wash', tag: 'FOUR-WHEELER', desc: 'Precision multi-stage exterior body wash, arches cleaning & streak-free dry.' },
@@ -35,9 +37,9 @@ export default function Services({ onSelectService }) {
                 SERVICES WE PROVIDE // BAY SPECIFICATIONS
               </span>
             </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white font-heading">
+            <HeadingTag className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white font-heading">
               SERVICES & SPECIFICATIONS.
-            </h2>
+            </HeadingTag>
           </div>
           <p className="text-xs sm:text-sm text-neutral-400 max-w-sm font-normal leading-relaxed text-left">
             Professional automotive care carried out in dedicated bays in Varanasi.

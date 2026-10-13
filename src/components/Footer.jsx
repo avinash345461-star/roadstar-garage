@@ -1,27 +1,42 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { ArrowUp, Phone, MapPin } from 'lucide-react';
+import { ArrowUp, Phone } from 'lucide-react';
 
-export default function Footer() {
+export default function Footer({ currentPath = '/', onNavigate }) {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const navLinks = [
-    { name: 'Home', href: '#home' },
-    { name: 'Services', href: '#services' },
-    { name: 'Philosophy', href: '#philosophy' },
-    { name: 'Reviews', href: '#reviews' },
-    { name: 'Platforms', href: '#socials' },
-    { name: 'About', href: '#about' },
-    { name: 'Location', href: '#contact' },
+    { name: 'Home', href: '/', hash: '#home' },
+    { name: 'Services', href: '/services', hash: '#services' },
+    { name: 'Work Archive', href: '/gallery', hash: '' },
+    { name: 'Philosophy', href: '#philosophy', hash: '#philosophy' },
+    { name: 'Reviews', href: '#reviews', hash: '#reviews' },
+    { name: 'Studio Ethos', href: '/about', hash: '#about' },
+    { name: 'Location Coordinates', href: '/contact', hash: '#contact' },
   ];
 
   const handleNavClick = (e, link) => {
     e.preventDefault();
-    const target = document.querySelector(link.href);
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth' });
+    if (link.href === '/gallery') {
+      if (onNavigate) {
+        onNavigate('/gallery');
+      }
+      return;
+    }
+    if (currentPath === '/') {
+      if (link.hash) {
+        const target = document.querySelector(link.hash);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+          return;
+        }
+      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      if (onNavigate) {
+        onNavigate(link.href);
+      }
     }
   };
 
